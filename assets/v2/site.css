@@ -552,3 +552,6 @@ a.work { display: block; }
 .zoom .zp:hover, .zoom .zn:hover { background: var(--red); }
 .zoom.single .zp, .zoom.single .zn { display: none; }
 .zoom img { max-height: calc(100vh - 120px); }
+
+/* no long-press save / drag on photos */
+img { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }

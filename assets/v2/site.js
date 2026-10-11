@@ -1,3 +1,4 @@
+import './guard.js';
 import { PHOTOS, CASES } from './data.js';
 
 const $ = (s, el = document) => el.querySelector(s);
