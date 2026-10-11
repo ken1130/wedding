@@ -501,7 +501,7 @@
       root.innerHTML =
         '<style>' + stylesheet + '</style>' +
         '<div class="frame" part="frame">' +
-        '  <img part="image" alt="" loading="lazy" decoding="async" draggable="false" style="display:none">' +
+        '  <img part="image" alt="" fetchpriority="low" decoding="async" draggable="false" style="display:none">' +
         '  <div class="empty" part="empty">' + icon +
         '    <div class="cap"></div>' +
         '    <div class="sub">or <u>browse files</u></div></div>' +
@@ -1139,6 +1139,9 @@
           // flag, not complete, to know a load is in flight.
           this._loadPending = true;
           this._img.src = url;
+          // Decode ahead of time so the first scroll past the photo doesn't
+          // stall on a main-thread decode (iOS Safari).
+          if (this._img.decode) this._img.decode().catch(() => {});
           this._ghost.src = url;
         } else {
           // Same-src re-render — release if settled, so an ingest-set
