@@ -555,3 +555,77 @@ a.work { display: block; }
 
 /* no long-press save / drag on photos */
 img { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }
+
+/* =================== typography: serif display + italic script =================== */
+@font-face {
+  font-family: 'Noto Serif TC';
+  font-style: normal;
+  font-weight: 600 900;
+  font-display: swap;
+  src: url(noto-serif-tc.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(instrument.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(instrument-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212;
+}
+:root {
+  /* Display text is subset by tools/build.py (DISPLAY_RE): h1–h3, .big, .big-text, .price-band, .occasions. */
+  --display: 'Noto Serif TC', 'Noto Sans TC', 'PingFang TC', serif;
+  --script: 'Instrument Serif', 'Noto Serif TC', serif;
+}
+/* CJK has no real italic or extra bold here; never fake them. */
+h1, h2, h3, .big, .big-text { font-synthesis: none; }
+
+.hero h1, .page-hero h1, .sec-head h2, .svc h3, .how-step .big, .split-text h2,
+.story h2, .contact h2, .big-text, .plan h3, .price-band > span:first-child,
+.channel h2, .occasions span, .menu a.big {
+  font-family: var(--display);
+  font-weight: 900;
+  letter-spacing: 0;
+  font-stretch: normal;
+}
+.hero h1, .page-hero h1 { line-height: 1.12; }
+.sec-head h2, .split-text h2, .story h2 { line-height: 1.22; }
+.contact h2 { line-height: 1.15; }
+.big-text { font-weight: 700; line-height: 1.6; }
+.how-step .big { line-height: .9; }
+.menu a.big small { font-family: var(--font); }
+
+/* italic script accents: section labels, couple names */
+.sec-head h2 b, .story h2 b, .split-text .kicker, .page-hero .kicker, .statement .kicker {
+  font-family: var(--script);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-stretch: normal;
+}
+.sec-head h2 b, .story h2 b { font-size: clamp(22px, 2.2vw, 32px); color: var(--red); margin-bottom: 4px; }
+.split-text .kicker, .page-hero .kicker, .statement .kicker { font-size: clamp(20px, 1.8vw, 26px); margin-bottom: 8px; }
+.work-cap h3, .case-hero h1, .pager a {
+  font-family: var(--script);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-stretch: normal;
+}
+.work-cap h3 { font-size: clamp(26px, 2.5vw, 36px); line-height: 1.05; }
+.case-hero h1 { font-size: clamp(64px, 10vw, 168px); line-height: .95; }
+.pager a { font-size: clamp(26px, 3vw, 42px); }
+.pager a span, .pager .pager-all { font-family: var(--font); font-style: normal; }
+.tip { font-family: var(--script); font-style: italic; font-weight: 400; font-size: 20px; }
+.tip small { font-family: var(--font); font-style: normal; }
+@media (max-width: 520px) { .work-cap h3 { font-size: 22px; } }

@@ -146,24 +146,48 @@ def case_page(tpl, data, i):
     return meta, body
 
 
-def refresh_font(texts):
-    chars = sorted({ch for t in texts for ch in t if ord(ch) > 0x7F} | set('０１２３４５６７８９'))
-    want = ''.join(chars)
-    stamp = os.path.join(V2, 'noto-tc.chars')
-    if os.path.exists(stamp) and set(load(stamp)) >= set(want):
-        return 'font subset up to date'
-    q = ('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap&text='
-         + urllib.parse.quote(want))
+FONTS = [  # (Google Fonts family spec, local file stem, which text it must cover)
+    ('Noto+Sans+TC:wght@400..900', 'noto-tc', 'all'),
+    ('Noto+Serif+TC:wght@600..900', 'noto-serif-tc', 'display'),
+]
+
+# Elements set in the serif display face (keep in sync with --display in site.css).
+DISPLAY_RE = re.compile(
+    r'<(h1|h2|h3)\b[^>]*>(.*?)</\1>'
+    r'|<(\w+) class="(?:big|big-text|price-band rv|occasions rv)"[^>]*>(.*?)</\3>', re.S)
+
+
+def display_text(pages):
+    out = []
+    for page in pages:
+        for m in DISPLAY_RE.finditer(page):
+            out.append(m.group(2) or m.group(4) or '')
+    return ''.join(out)
+
+
+def refresh_font(texts, display):
     ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
-    try:
-        css = urllib.request.urlopen(urllib.request.Request(q, headers={'User-Agent': ua}), timeout=30).read().decode()
-        url = re.findall(r'url\((https://[^)]+)\)', css)[0]
-        data = urllib.request.urlopen(url, timeout=30).read()
-    except Exception as e:  # offline: keep the old subset, new characters fall back to system fonts
-        return f'WARNING: font subset not refreshed ({e})'
-    open(os.path.join(V2, 'noto-tc.woff2'), 'wb').write(data)
-    save(stamp, want)
-    return f'font subset refreshed: {len(chars)} chars, {len(data) // 1024} KB'
+    msgs = []
+    for family, stem, cover in FONTS:
+        src = texts if cover == 'all' else display
+        chars = sorted({ch for t in src for ch in t if ord(ch) > 0x7F} | set('０１２３４５６７８９'))
+        want = ''.join(chars)
+        stamp = os.path.join(V2, stem + '.chars')
+        if os.path.exists(stamp) and set(load(stamp)) >= set(want):
+            msgs.append(f'{stem}: up to date')
+            continue
+        q = f'https://fonts.googleapis.com/css2?family={family}&display=swap&text=' + urllib.parse.quote(want)
+        try:
+            css = urllib.request.urlopen(urllib.request.Request(q, headers={'User-Agent': ua}), timeout=30).read().decode()
+            url = re.findall(r'url\((https://[^)]+)\)', css)[0]
+            data = urllib.request.urlopen(url, timeout=30).read()
+        except Exception as e:  # offline: keep the old subset, new characters fall back to system fonts
+            msgs.append(f'WARNING: {stem} not refreshed ({e})')
+            continue
+        open(os.path.join(V2, stem + '.woff2'), 'wb').write(data)
+        save(stamp, want)
+        msgs.append(f'{stem}: refreshed, {len(chars)} chars, {len(data) // 1024} KB')
+    return '\n'.join(msgs)
 
 
 def main():
@@ -205,7 +229,9 @@ def main():
     texts = [o for _, o in written] + [js, load(os.path.join(V2, 'site.js')), load(os.path.join(ROOT, 'admin', 'index.html'))]
     for name, _ in written:
         print('wrote', name)
-    print(refresh_font(texts))
+    # Couple names come from data.js at runtime too (wall tooltip), so include them.
+    display = [display_text(o for _, o in written), ''.join(c['couple'] for c in data['cases'])]
+    print(refresh_font(texts, display))
 
 
 if __name__ == '__main__':

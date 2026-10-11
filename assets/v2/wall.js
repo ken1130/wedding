@@ -68,7 +68,6 @@ const FRAG = /* glsl */`
     float d = sdRound(p, vec2(0.5), uRadius);
     float aa = fwidth(d);
     float a = 1.0 - smoothstep(-aa, aa, d);
-    if (a <= 0.0) discard;
 
     // Gentle zoom inside the frame on hover.
     vec2 uv = (vUv - 0.5) * (1.0 - 0.07 * vHover) + 0.5;

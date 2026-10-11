@@ -37,6 +37,7 @@
 
 ## 照片牆
 
+- 字型：標題用思源宋體（Noto Serif TC），英文名字／標籤用 Instrument Serif 斜體，內文用思源黑體＋Archivo。中文字型都是只含用字的子集，由 build.py 自動更新。
 - `assets/v2/wall.js`：照片牆本體
 - `assets/v2/atlas.webp`：照片牆貼圖，2048 × 2048，6 × 6 格，順序同 `data.json` 的 `photos`
   （每張裁成正方形，由左到右、由上到下排列）
