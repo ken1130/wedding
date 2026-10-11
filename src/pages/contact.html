@@ -1,0 +1,65 @@
+<!--{"title": "聯絡詢問｜LINE 報價", "desc": "LINE 或 IG 私訊映時 INTIME，告訴我們日期、場地與人數，通常當天回覆報價。", "nav": "contact", "nocta": true}-->
+<section class="page-hero solo">
+  <div class="ph-text">
+    <p class="kicker rv">Contact</p>
+    <h1 class="rv">聯絡詢問</h1>
+    <p class="ph-lead rv">告訴我們日期、場地與預估人數，小編通常當天回覆報價。熱門月份建議提前 3 個月預約。</p>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="contact-grid">
+    <div class="channel line-card rv" id="line">
+      <p class="kicker">LINE 官方帳號</p>
+      <h2>LINE 詢問報價</h2>
+      <p>加入映時 LINE 官方帳號，直接和小編確認檔期與報價。</p>
+      <div class="qr" aria-hidden="true"><span>LINE<br>QR CODE</span></div>
+      <a class="pill line" href="{{line}}"{{line_target}}>{{icon:line}}加入 LINE 好友</a>
+    </div>
+    <div class="channel rv">
+      <p class="kicker">Instagram</p>
+      <h2>IG 私訊</h2>
+      <p>想先看更多現場照片與限時動態，歡迎追蹤 @intime.photo_，也可以直接私訊詢問。</p>
+      <div class="btns">
+        <a class="pill" href="https://ig.me/m/intime.photo_" target="_blank" rel="noopener">IG 私訊</a>
+        <a class="pill ghost" href="{{ig}}" target="_blank" rel="noopener">{{icon:ig}}@intime.photo_</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head rv">
+    <h2><b>Inquiry</b>詢問單</h2>
+    <p>填好後按「複製並開啟 LINE」，內容會自動複製，到 LINE 貼上送出就好。</p>
+  </div>
+  <form class="ask rv" id="ask">
+    <label><span>活動日期</span><input type="date" name="date" required></label>
+    <label><span>活動類型</span>
+      <select name="type"><option>婚禮</option><option>訂婚</option><option>收涎・週歲</option><option>派對・生日</option><option>尾牙・春酒</option><option>品牌活動</option><option>其他</option></select>
+    </label>
+    <label><span>場地（縣市＋場地名稱）</span><input name="venue" placeholder="例：台北・晶華酒店" required></label>
+    <label><span>預估人數</span><input name="guests" inputmode="numeric" placeholder="例：200"></label>
+    <fieldset><legend>想詢問的服務</legend>
+      <label class="chk"><input type="checkbox" name="svc" value="拍貼機" checked><span>拍貼機</span></label>
+      <label class="chk"><input type="checkbox" name="svc" value="電話留影機"><span>電話留影機</span></label>
+    </fieldset>
+    <label><span>稱呼</span><input name="name" placeholder="例：王小姐"></label>
+    <label class="full"><span>其他想說的</span><textarea name="note" rows="4" placeholder="例：想要復古風相框、場地在戶外…"></textarea></label>
+    <div class="full ask-actions">
+      <button class="pill line" type="submit" data-to="line">{{icon:line}}複製並開啟 LINE</button>
+      <button class="pill ghost" type="submit" data-to="ig">複製並開啟 IG 私訊</button>
+      <span class="ask-msg" role="status"></span>
+    </div>
+  </form>
+</section>
+
+<section class="sec">
+  <div class="sec-head rv"><h2><b>Process</b>預約流程</h2></div>
+  <div class="steps">
+    <div class="step rv"><span class="n">STEP 01</span><b>LINE 詢問檔期</b><p>告訴我們日期、場地與預估人數。</p></div>
+    <div class="step rv"><span class="n">STEP 02</span><b>確認方案與訂金</b><p>選定方案後支付訂金，保留當天檔期。</p></div>
+    <div class="step rv"><span class="n">STEP 03</span><b>設計確認</b><p>活動前 3 週提供相框設計稿，兩次修改。</p></div>
+    <div class="step rv"><span class="n">STEP 04</span><b>活動當天</b><p>專人提早進場架設，活動結束後撤場。</p></div>
+  </div>
+</section>

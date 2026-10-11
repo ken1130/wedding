@@ -1,0 +1,27 @@
+<!--{"title": "作品集｜婚禮與活動案例", "desc": "映時 INTIME 拍貼機與電話留影機的婚禮與活動案例：台北、台中、新竹、台南、高雄等地的現場紀錄。", "nav": "works", "wall": true, "bodyclass": "short-hero"}-->
+<section class="hero short">
+  <canvas id="wall" aria-label="作品照片牆，可拖曳瀏覽，點選照片前往該場活動案例"></canvas>
+  <div class="hero-copy">
+    <div>
+      <p class="kicker">Works</p>
+      <h1>作品集</h1>
+      <p class="hero-sub">拖曳照片牆瀏覽，點一張照片看那一天的故事。</p>
+    </div>
+    <div class="hero-side"><span class="hint"><i></i>DRAG TO EXPLORE</span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head rv">
+    <h2><b>All works</b>所有案例</h2>
+    <div class="chips" id="filters" role="group" aria-label="依服務篩選">
+      <button type="button" class="on" data-f="all">全部</button>
+      <button type="button" data-f="拍貼機">拍貼機</button>
+      <button type="button" data-f="電話留影機">電話留影機</button>
+      <button type="button" data-f="雙機">雙機</button>
+    </div>
+  </div>
+  <div class="works" id="works-list">
+{{cards:all}}
+  </div>
+</section>

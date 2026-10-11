@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{desc}}">
+<meta property="og:type" content="website">
+<script>try{if(sessionStorage.getItem('intime-seen'))document.documentElement.classList.add('seen')}catch(e){}</script>
+{{head}}<link rel="preload" href="{{root}}assets/v2/noto-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{root}}assets/v2/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{root}}assets/v2/site.css">
+<script type="module" src="{{root}}assets/v2/site.js"></script>
+</head>
+<body class="{{bodyclass}}" data-page="{{page}}" data-root="{{root}}">
+{{loader}}
+<header class="nav">
+  <nav class="nav-l" aria-label="主選單">
+    <a href="{{root}}booth.html"{{nav:booth}}>拍貼機</a>
+    <a href="{{root}}phone.html"{{nav:phone}}>電話留影機</a>
+    <a href="{{root}}works.html"{{nav:works}}>作品集</a>
+    <a href="{{root}}plans.html"{{nav:plans}}>方案價格</a>
+    <a href="{{root}}about.html"{{nav:about}}>關於映時</a>
+  </nav>
+  <a class="logo" href="{{root}}index.html" aria-label="映時 INTIME 首頁"><span>映時</span><b>INTIME</b></a>
+  <div class="nav-r">
+    <a class="ico" href="{{ig}}" target="_blank" rel="noopener" aria-label="Instagram">{{icon:ig}}</a>
+    <a class="pill line" href="{{line}}"{{line_target}}>{{icon:line}}LINE 詢問報價</a>
+    <button class="burger" aria-label="開啟選單" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <a class="big" href="{{root}}index.html">首頁 <small>HOME</small></a>
+  <a class="big" href="{{root}}booth.html">拍貼機 <small>PHOTO BOOTH</small></a>
+  <a class="big" href="{{root}}phone.html">電話留影機 <small>PHONE GUESTBOOK</small></a>
+  <a class="big" href="{{root}}works.html">作品集 <small>WORKS</small></a>
+  <a class="big" href="{{root}}plans.html">方案價格 <small>PLANS</small></a>
+  <a class="big" href="{{root}}about.html">關於映時 <small>ABOUT</small></a>
+  <a class="big" href="{{root}}contact.html">聯絡詢問 <small>CONTACT</small></a>
+  <a class="pill line" href="{{line}}"{{line_target}}>{{icon:line}}LINE 詢問報價</a>
+</div>
+
+<main>
+{{body}}
+</main>
+
+<!--cta--><section class="contact">
+  <div class="sec">
+    <h2 class="rv">你的日子，<br>還有<em>空檔</em>嗎？</h2>
+    <div class="contact-row rv">
+      <p>傳日期、場地和預估人數給我們，通常當天回覆報價。熱門月份建議提前 3 個月預約。</p>
+      <div class="btns">
+        <a class="pill line" href="{{line}}"{{line_target}}>{{icon:line}}LINE 詢問報價</a>
+        <a class="pill ghost" href="{{root}}contact.html">填寫詢問單</a>
+      </div>
+    </div>
+  </div>
+</section><!--/cta-->
+
+<footer>
+  <div class="foot">
+    <div>
+      <a class="logo" href="{{root}}index.html"><span>映時</span><b>INTIME</b></a>
+      <p>婚禮活動拍貼機｜電話留影機</p>
+      <p>婚禮・收涎・派對・尾牙・品牌活動</p>
+      <p class="copy">© 2026 映時 INTIME</p>
+    </div>
+    <div><h4>SERVICES</h4><a href="{{root}}booth.html">拍貼機</a><a href="{{root}}phone.html">電話留影機</a><a href="{{root}}plans.html">方案價格</a></div>
+    <div><h4>INTIME</h4><a href="{{root}}works.html">作品集</a><a href="{{root}}about.html">關於映時</a><a href="{{root}}contact.html">聯絡詢問</a></div>
+    <div><h4>CONTACT</h4><a href="{{line}}"{{line_target}}>LINE 詢問</a><a href="{{ig}}" target="_blank" rel="noopener">Instagram</a><p>北部・中部・南部</p></div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="pill line" href="{{line}}"{{line_target}}>{{icon:line}}LINE 詢問報價</a>
+  <a class="ico-round" href="{{ig}}" target="_blank" rel="noopener" aria-label="Instagram">{{icon:ig}}</a>
+</div>
+<div class="zoom" id="zoom"><img alt=""><button class="x" data-close aria-label="關閉">×</button><button class="zp" data-prev aria-label="上一張">←</button><button class="zn" data-next aria-label="下一張">→</button></div>
+</body>
+</html>

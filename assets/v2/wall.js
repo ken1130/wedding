@@ -73,7 +73,9 @@ const FRAG = /* glsl */`
     // Gentle zoom inside the frame on hover.
     vec2 uv = (vUv - 0.5) * (1.0 - 0.07 * vHover) + 0.5;
     uv = uv * 0.985 + 0.0075;
-    float col = mod(vIdx, 6.0), row = floor(vIdx / 6.0);
+    // Varyings arrive as e.g. 29.9999; snap before deriving the atlas cell.
+    float id = floor(vIdx + 0.5);
+    float col = mod(id, 6.0), row = floor(id / 6.0);
     vec2 auv = vec2((col + uv.x) / 6.0, 1.0 - (row + 1.0 - uv.y) / 6.0);
     vec3 c = texture2D(uAtlas, auv).rgb;
 

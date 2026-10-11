@@ -1,0 +1,37 @@
+<!--{"title": "{{couple}} 婚禮案例", "desc": "{{intro}}", "nav": "works"}-->
+<section class="page-hero case-hero">
+  <div class="crumbs rv"><a href="{{root}}works.html">作品集</a><span>/</span>{{couple}}</div>
+  <div class="case-top">
+    <h1 class="rv">{{couple}}</h1>
+    <div class="rv">
+      <p class="case-intro">{{intro}}</p>
+      <div class="meta">
+        <div><b>日期</b>{{date}}</div>
+        <div><b>場地</b>{{venue}}</div>
+        <div><b>服務</b><a href="{{root}}{{svc_link}}">{{svc}}</a></div>
+        <div><b>賓客</b>{{guests}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="gal">
+{{gallery}}
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="story rv">
+    <h2><b>Story</b>那天的現場</h2>
+    <div>{{story}}</div>
+  </div>
+</section>
+
+<section class="sec tight">
+  <nav class="pager rv" aria-label="其他案例">
+    <a href="{{root}}works/{{prev_id}}.html"><span>← PREVIOUS</span>{{prev_couple}}</a>
+    <a href="{{root}}works.html" class="pager-all">全部作品</a>
+    <a href="{{root}}works/{{next_id}}.html" class="r"><span>NEXT →</span>{{next_couple}}</a>
+  </nav>
+</section>

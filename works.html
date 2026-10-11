@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>作品集｜婚禮與活動案例｜映時 INTIME</title>
+<meta name="description" content="映時 INTIME 拍貼機與電話留影機的婚禮與活動案例：台北、台中、新竹、台南、高雄等地的現場紀錄。">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="作品集｜婚禮與活動案例｜映時 INTIME">
+<meta property="og:description" content="映時 INTIME 拍貼機與電話留影機的婚禮與活動案例：台北、台中、新竹、台南、高雄等地的現場紀錄。">
+<meta property="og:type" content="website">
+<script>try{if(sessionStorage.getItem('intime-seen'))document.documentElement.classList.add('seen')}catch(e){}</script>
+<link rel="modulepreload" href="assets/v2/three.module.min.js">
+<link rel="preload" href="assets/v2/atlas.webp" as="fetch" crossorigin>
+<link rel="canonical" href="https://ken1130.github.io/wedding/works.html">
+<meta property="og:url" content="https://ken1130.github.io/wedding/works.html">
+<meta property="og:image" content="https://ken1130.github.io/wedding/assets/photos/p22.webp">
+<link rel="preload" href="assets/v2/noto-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/v2/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/v2/site.css">
+<script type="module" src="assets/v2/site.js"></script>
+</head>
+<body class="short-hero" data-page="works" data-root="">
+
+<header class="nav">
+  <nav class="nav-l" aria-label="主選單">
+    <a href="booth.html">拍貼機</a>
+    <a href="phone.html">電話留影機</a>
+    <a href="works.html" class="on" aria-current="page">作品集</a>
+    <a href="plans.html">方案價格</a>
+    <a href="about.html">關於映時</a>
+  </nav>
+  <a class="logo" href="index.html" aria-label="映時 INTIME 首頁"><span>映時</span><b>INTIME</b></a>
+  <div class="nav-r">
+    <a class="ico" href="https://www.instagram.com/intime.photo_/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a class="pill line" href="contact.html#line"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.4.1.8.3.9.6.1.3 0 .7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINE 詢問報價</a>
+    <button class="burger" aria-label="開啟選單" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <a class="big" href="index.html">首頁 <small>HOME</small></a>
+  <a class="big" href="booth.html">拍貼機 <small>PHOTO BOOTH</small></a>
+  <a class="big" href="phone.html">電話留影機 <small>PHONE GUESTBOOK</small></a>
+  <a class="big" href="works.html">作品集 <small>WORKS</small></a>
+  <a class="big" href="plans.html">方案價格 <small>PLANS</small></a>
+  <a class="big" href="about.html">關於映時 <small>ABOUT</small></a>
+  <a class="big" href="contact.html">聯絡詢問 <small>CONTACT</small></a>
+  <a class="pill line" href="contact.html#line"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.4.1.8.3.9.6.1.3 0 .7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINE 詢問報價</a>
+</div>
+
+<main>
+<section class="hero short">
+  <canvas id="wall" aria-label="作品照片牆，可拖曳瀏覽，點選照片前往該場活動案例"></canvas>
+  <div class="hero-copy">
+    <div>
+      <p class="kicker">Works</p>
+      <h1>作品集</h1>
+      <p class="hero-sub">拖曳照片牆瀏覽，點一張照片看那一天的故事。</p>
+    </div>
+    <div class="hero-side"><span class="hint"><i></i>DRAG TO EXPLORE</span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head rv">
+    <h2><b>All works</b>所有案例</h2>
+    <div class="chips" id="filters" role="group" aria-label="依服務篩選">
+      <button type="button" class="on" data-f="all">全部</button>
+      <button type="button" data-f="拍貼機">拍貼機</button>
+      <button type="button" data-f="電話留影機">電話留影機</button>
+      <button type="button" data-f="雙機">雙機</button>
+    </div>
+  </div>
+  <div class="works" id="works-list">
+<a class="work rv" href="works/mia-leo.html" data-svc="拍貼機"><img src="assets/photos/p3.webp" alt="Mia &amp; Leo 婚禮" loading="lazy" decoding="async"><span class="work-cap"><span><h3>Mia &amp; Leo</h3><p>2026.05.17 · 陽明山・青青食尚花園</p></span><span class="tag dark">拍貼機</span></span></a>
+<a class="work rv" href="works/amy-ken.html" data-svc="拍貼機"><img src="assets/photos/p11.webp" alt="Amy &amp; Ken 婚禮" loading="lazy" decoding="async"><span class="work-cap"><span><h3>Amy &amp; Ken</h3><p>2026.09.12 · 台北・晶華酒店</p></span><span class="tag dark">拍貼機</span></span></a>
+<a class="work rv" href="works/yuting-hao.html" data-svc="雙機"><img src="assets/photos/p18.webp" alt="語婷 &amp; 子豪 婚禮" loading="lazy" decoding="async"><span class="work-cap"><span><h3>語婷 &amp; 子豪</h3><p>2026.08.23 · 台中・林酒店</p></span><span class="tag">雙機</span></span></a>
+<a class="work rv" href="works/joanne.html" data-svc="電話留影機"><img src="assets/photos/p10.webp" alt="Joanne &amp; 彥廷 婚禮" loading="lazy" decoding="async"><span class="work-cap"><span><h3>Joanne &amp; 彥廷</h3><p>2026.07.05 · 新竹・煙波大飯店</p></span><span class="tag dark">電話留影機</span></span></a>
+<a class="work rv" href="works/pei-jun.html" data-svc="電話留影機"><img src="assets/photos/p19.webp" alt="佩儀 &amp; 俊宏 婚禮" loading="lazy" decoding="async"><span class="work-cap"><span><h3>佩儀 &amp; 俊宏</h3><p>2026.04.11 · 台南・晶英酒店</p></span><span class="tag dark">電話留影機</span></span></a>
+<a class="work rv" href="works/ann-sam.html" data-svc="雙機"><img src="assets/photos/p9.webp" alt="Ann &amp; Sam 婚禮" loading="lazy" decoding="async"><span class="work-cap"><span><h3>Ann &amp; Sam</h3><p>2026.03.28 · 高雄・漢來大飯店</p></span><span class="tag">雙機</span></span></a>
+  </div>
+</section>
+</main>
+
+<section class="contact">
+  <div class="sec">
+    <h2 class="rv">你的日子，<br>還有<em>空檔</em>嗎？</h2>
+    <div class="contact-row rv">
+      <p>傳日期、場地和預估人數給我們，通常當天回覆報價。熱門月份建議提前 3 個月預約。</p>
+      <div class="btns">
+        <a class="pill line" href="contact.html#line"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.4.1.8.3.9.6.1.3 0 .7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINE 詢問報價</a>
+        <a class="pill ghost" href="contact.html">填寫詢問單</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>
+      <a class="logo" href="index.html"><span>映時</span><b>INTIME</b></a>
+      <p>婚禮活動拍貼機｜電話留影機</p>
+      <p>婚禮・收涎・派對・尾牙・品牌活動</p>
+      <p class="copy">© 2026 映時 INTIME</p>
+    </div>
+    <div><h4>SERVICES</h4><a href="booth.html">拍貼機</a><a href="phone.html">電話留影機</a><a href="plans.html">方案價格</a></div>
+    <div><h4>INTIME</h4><a href="works.html">作品集</a><a href="about.html">關於映時</a><a href="contact.html">聯絡詢問</a></div>
+    <div><h4>CONTACT</h4><a href="contact.html#line">LINE 詢問</a><a href="https://www.instagram.com/intime.photo_/" target="_blank" rel="noopener">Instagram</a><p>北部・中部・南部</p></div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="pill line" href="contact.html#line"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.4.1.8.3.9.6.1.3 0 .7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINE 詢問報價</a>
+  <a class="ico-round" href="https://www.instagram.com/intime.photo_/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
+</div>
+<div class="zoom" id="zoom"><img alt=""><button class="x" data-close aria-label="關閉">×</button><button class="zp" data-prev aria-label="上一張">←</button><button class="zn" data-next aria-label="下一張">→</button></div>
+</body>
+</html>
